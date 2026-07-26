@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+  CampusOne design tokens -- shadcn/ui CSS-variable convention (so any
+  shadcn-pattern component maps automatically), carrying the same
+  identity as the product's earlier design pass: deep indigo-ink as
+  the institutional primary, warm marigold as the "bulletin board"
+  accent for actions and highlights. Avoiding both the generic
+  cream+terracotta and near-black+neon AI-default palettes.
+*/
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-sm: calc(var(--radius) - 8px);
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --background: #f7f8fb;
+  --foreground: #141d35;
+
+  --card: #ffffff;
+  --card-foreground: #141d35;
+
+  --popover: #ffffff;
+  --popover-foreground: #141d35;
+
+  --primary: #1e2a4a;
+  --primary-foreground: #ffffff;
+
+  --secondary: #eef0f5;
+  --secondary-foreground: #1e2a4a;
+
+  --muted: #eef0f5;
+  --muted-foreground: #64748b;
+
+  --accent: #f5a623;
+  --accent-foreground: #1e2a4a;
+
+  --destructive: #e5484d;
+  --destructive-foreground: #ffffff;
+
+  --border: #e1e4ec;
+  --input: #e1e4ec;
+  --ring: #f5a623;
+}
+
+.dark {
+  --background: #0b1122;
+  --foreground: #e6eaf5;
+
+  --card: #141d35;
+  --card-foreground: #e6eaf5;
+
+  --popover: #141d35;
+  --popover-foreground: #e6eaf5;
+
+  --primary: #f5a623;
+  --primary-foreground: #0b1122;
+
+  --secondary: #1e2a4a;
+  --secondary-foreground: #e6eaf5;
+
+  --muted: #1e2a4a;
+  --muted-foreground: #9aa9cc;
+
+  --accent: #f5a623;
+  --accent-foreground: #0b1122;
+
+  --destructive: #e5484d;
+  --destructive-foreground: #ffffff;
+
+  --border: #263759;
+  --input: #263759;
+  --ring: #f5a623;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
